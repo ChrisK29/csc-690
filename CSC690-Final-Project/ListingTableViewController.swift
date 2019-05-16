@@ -91,10 +91,10 @@ class ListingTableViewController: UITableViewController {
         
         let optionMenu = UIAlertController(title: nil, message: "Filter Listings", preferredStyle: .actionSheet)
         // Create Actions
-        let byDateAction = UIAlertAction(title: "By Date", style: .default, handler: { _ in print("Filter by date") })
-        let cheapestAction = UIAlertAction(title: "Cheapest", style: .default, handler: { _ in print("Filter by cheapest") })
+        let byDateAction = UIAlertAction(title: "Newest", style: .default, handler: { _ in self.getListings(params: [ "sortBy": "newest" ]) })
+        let cheapestAction = UIAlertAction(title: "Cheapest", style: .default, handler: { _ in self.getListings(params: [ "sortBy": "cheapest" ]) })
         let bedroomsAction = UIAlertAction(title: "Bedrooms", style: .default, handler: {
-            _ in print("Filter by bedrooms")
+            _ in self.getListings(params: [ "sortBy": "bedrooms" ])
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
@@ -109,11 +109,17 @@ class ListingTableViewController: UITableViewController {
         
     }
     
-    private func getListings(){
+    private func getListings(params:[String:String] = [:]){
         // Make Http Request
-        let url = URL(string: "http://localhost:5000/listings");
+        var url = URLComponents(string: "http://localhost:5000/listings");
+        var queryParams = [URLQueryItem]()
+        queryParams.append(URLQueryItem(name: "approved", value: "true"))
+        for (key,value) in params {
+            queryParams.append(URLQueryItem(name: key, value: value))
+        }
+        url?.queryItems = queryParams
         if let url = url {
-            let task = URLSession.shared.dataTask(with: url){
+            let task = URLSession.shared.dataTask(with: url.url!){
                 (data, response, error) in
                 if error != nil{
                     print("error \(error!)")
@@ -124,7 +130,8 @@ class ListingTableViewController: UITableViewController {
                             do {
                                 let decodedListings = try JSONDecoder().decode([Listing].self, from: data)
                                 print(decodedListings)
-                                self.listings += decodedListings
+                                self.listings.removeAll()
+                                self.listings.append(contentsOf: decodedListings)
                                 self.tableView.reloadData()
                             }catch{
                                 fatalError("Failed to convert data into json")

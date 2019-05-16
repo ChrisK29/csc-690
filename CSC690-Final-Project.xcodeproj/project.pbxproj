@@ -12,7 +12,7 @@
 		7742B61222800C850008F44B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742B61022800C850008F44B /* Main.storyboard */; };
 		7742B61422800C860008F44B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7742B61322800C860008F44B /* Assets.xcassets */; };
 		7742B61722800C860008F44B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7742B61522800C860008F44B /* LaunchScreen.storyboard */; };
-		7742B62222800C860008F44B /* CSC690_Final_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742B62122800C860008F44B /* CSC690_Final_ProjectTests.swift */; };
+		7742B62222800C860008F44B /* ListingModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742B62122800C860008F44B /* ListingModelTests.swift */; };
 		7742B62D22800C860008F44B /* CSC690_Final_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7742B62C22800C860008F44B /* CSC690_Final_ProjectUITests.swift */; };
 		7783118522853C7100CD74C3 /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783118422853C7100CD74C3 /* ListingTableViewCell.swift */; };
 		7783118722853CB400CD74C3 /* ListingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7783118622853CB400CD74C3 /* ListingTableViewController.swift */; };
@@ -46,7 +46,7 @@
 		7742B61622800C860008F44B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7742B61822800C860008F44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7742B61D22800C860008F44B /* CSC690-Final-ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CSC690-Final-ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7742B62122800C860008F44B /* CSC690_Final_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSC690_Final_ProjectTests.swift; sourceTree = "<group>"; };
+		7742B62122800C860008F44B /* ListingModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingModelTests.swift; sourceTree = "<group>"; };
 		7742B62322800C860008F44B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7742B62822800C860008F44B /* CSC690-Final-ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CSC690-Final-ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7742B62C22800C860008F44B /* CSC690_Final_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSC690_Final_ProjectUITests.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		7742B62022800C860008F44B /* CSC690-Final-ProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				7742B62122800C860008F44B /* CSC690_Final_ProjectTests.swift */,
+				7742B62122800C860008F44B /* ListingModelTests.swift */,
 				7742B62322800C860008F44B /* Info.plist */,
 			);
 			path = "CSC690-Final-ProjectTests";
@@ -279,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7783118A22853E9E00CD74C3 /* Listing.swift in Sources */,
-				7742B62222800C860008F44B /* CSC690_Final_ProjectTests.swift in Sources */,
+				7742B62222800C860008F44B /* ListingModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
